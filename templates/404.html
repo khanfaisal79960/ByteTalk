@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}ByteTalk - 404 Not Found{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center text-center py-5 animate__animated animate__fadeInUp">
+    <div class="col-md-8 col-lg-6">
+        <h1 class="display-1 text-neon-pink mb-4 animate__animated animate__bounceIn">404</h1>
+        <h2 class="post-detail-title mb-3 animate__animated animate__fadeIn">Oops! That's a Miss. 🤷‍♀️</h2>
+        <p class="lead text-white-50 mb-4 animate__animated animate__fadeIn">
+            Looks like the page you're looking for went offline or never existed. No cap.
+        </p>
+        <img src="{{ url_for('static', filename='img/glitch_404.gif') }}" alt="Glitch effect 404" class="img-fluid mb-4 rounded-3 shadow-lg" style="max-width: 300px; border: 1px solid var(--border-dark);"> {# Placeholder for a cool glitch GIF #}
+        <p class="text-white-50 animate__animated animate__fadeIn">
+            Let's get you back on track.
+        </p>
+        <a href="{{ url_for('index') }}" class="btn btn-neon-purple btn-lg mt-3 animate__animated animate__pulse animate__infinite">
+            Head Home, Fam <span class="emoji">🏠</span>
+        </a>
+    </div>
+</div>
+{% endblock %}

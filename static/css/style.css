@@ -1,0 +1,625 @@
+/* static/css/style.css */
+
+:root {
+    /* Dark Theme Colors */
+    --bg-dark: #1a1a2e; /* Deep purple-blue */
+    --bg-light: #2e2e4a; /* Slightly lighter shade for cards */
+    --text-primary: #e0e0e0; /* Light gray for main text */
+    --text-secondary: #aaaaaa; /* Muted gray for meta info */
+    --text-lighter: #f8f8f8; /* Almost white for highlights */
+    --border-dark: #3a3a50; /* Darker border for contrast */
+    --link-color: var(--neon-blue); /* Default link color */
+
+    /* Neon Accent Colors */
+    --neon-purple: #9d4ed0; /* Example: Bright purple */
+    --neon-blue: #00bfff; /* Example: Bright cyan/blue */
+    --neon-green: #39ff14; /* Example: Electric green */
+    --neon-pink: #ff1493; /* Example: Deep pink */
+    --neon-yellow: #fefe33; /* Example: Bright yellow */
+}
+
+
+body.light-mode {
+    --bg-dark: #f0f2f5; /* Light background for body */
+    --bg-light: #ffffff; /* White background for cards */
+    --text-primary: #333333; /* Dark text for main content */
+    --text-secondary: #555555; /* Slightly lighter dark for meta */
+    --text-lighter: #111111; /* Darker for highlights */
+    --border-dark: #e0e0e0; /* Light border */
+    --link-color: #007bff; /* Standard blue link */
+
+    /* Neon accents can remain the same or be subdued for light mode */
+}
+
+.intro-text {
+    color: var(--text-secondary); /* Use the secondary text color variable */
+}
+
+/* --- General Styles --- */
+html, body {
+    height: 100%; /* Make html and body take full viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex; /* Make body a flex container */
+    flex-direction: column; /* Stack children vertically */
+    /* All your existing body styles remain here */
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Ensure main content area grows and pushes the footer down */
+main {
+    flex-grow: 1; /* Allows the main content to take up available space */
+}
+
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--neon-blue);
+    text-decoration: underline;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-lighter);
+}
+
+.display-1 {
+    font-weight: 700;
+    font-size: 5rem;
+}
+
+.form-control-dark-minimal::placeholder {
+    color: var(--text-secondary) !important; 
+    opacity: 0.7;
+    transition: color 0.3s ease;
+}
+
+.post-detail-title {
+    color: var(--neon-purple); 
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.card-title-genz {
+    color: var(--neon-blue); 
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.3);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.card-text-genz {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem; /* Added margin for spacing */
+}
+
+.post-meta {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--text-secondary); 
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.post-content {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    line-height: 1.8;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-dark);
+}
+
+.post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+    color: var(--neon-green);
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px dashed var(--border-dark);
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
+}
+
+.post-content p {
+    margin-bottom: 1em;
+}
+
+.post-content strong {
+    color: var(--neon-yellow);
+    font-weight: 700;
+}
+
+.post-content em {
+    color: var(--neon-pink);
+    font-style: italic;
+}
+
+.post-content ul, .post-content ol {
+    margin-bottom: 1em;
+    padding-left: 1.5em;
+}
+
+.post-content li {
+    margin-bottom: 0.5em;
+    color: var(--text-secondary); /* Lighter text for list items */
+}
+
+.post-content a {
+    color: var(--neon-blue);
+    text-decoration: underline;
+}
+
+.post-content code {
+    background-color: var(--border-dark); /* Darker background for inline code */
+    color: var(--neon-green);
+    padding: 0.2em 0.4em;
+    border-radius: 5px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9em;
+}
+
+.post-content pre {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--border-dark);
+    border-radius: 8px;
+    padding: 1em;
+    overflow-x: auto;
+    margin-bottom: 1em;
+}
+
+.post-content pre code {
+    background-color: transparent;
+    color: var(--neon-green);
+    padding: 0;
+    border-radius: 0;
+    font-size: 1em;
+}
+
+blockquote {
+    border-left: 4px solid var(--neon-pink);
+    padding-left: 15px;
+    margin: 1.5em 0;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--bg-light) !important; /* Use variable */
+    border-bottom: 1px solid var(--border-dark);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand .logo-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700;
+    color: var(--neon-purple);
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.6);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand:hover .logo-text {
+    transform: scale(1.05);
+    text-shadow: 0 0 15px rgba(157, 78, 221, 0.8);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-primary) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--neon-blue) !important;
+    transform: translateY(-2px);
+    text-shadow: 0 0 8px rgba(0, 191, 255, 0.5);
+}
+
+/* Active Nav Link */
+.navbar-nav .nav-link.active {
+    color: var(--neon-green) !important;
+    border-bottom: 2px solid var(--neon-green);
+}
+
+.navbar-toggler {
+    border-color: var(--border-dark) !important;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28224, 224, 224, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+
+/* --- Cards --- */
+.card-dark-minimal {
+    background-color: var(--bg-light); /* Use variable */
+    border: 1px solid var(--border-dark);
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Ensures border-radius applies to children */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-dark-minimal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(157, 78, 221, 0.2); /* Subtle neon glow */
+}
+
+.card-footer-genz {
+    background-color: var(--bg-dark) !important;
+    border-top: 1px solid var(--border-dark);
+    padding: 0.75rem 1.25rem;
+    color: var(--text-secondary); /* Base color for footer text */
+    font-size: 0.85rem;
+}
+
+.card-footer-genz .text-muted {
+    color: var(--text-secondary) !important; 
+}
+
+.post-meta .text-muted { 
+    color: var(--text-secondary) !important;
+}
+
+/* --- Forms --- */
+.form-control-dark-minimal {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-dark) !important;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control-dark-minimal:focus {
+    background-color: var(--bg-dark) !important;
+    color: var(--text-lighter) !important;
+    border-color: var(--neon-blue) !important;
+    box-shadow: 0 0 0 0.25rem rgba(0, 191, 255, 0.25) !important; /* Neon blue focus glow */
+}
+
+.form-label {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+
+/* --- Buttons --- */
+.btn-neon-purple {
+    background-color: var(--neon-purple) !important;
+    color: var(--text-lighter) !important;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-neon-purple:hover {
+    background-color: var(--neon-purple) !important;
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.7), 0 0 50px rgba(157, 78, 221, 0.3);
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-neon-purple-outline {
+    color: var(--neon-purple) !important;
+    border-color: var(--neon-purple) !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+}
+
+.btn-neon-purple-outline:hover {
+    background-color: var(--neon-purple) !important;
+    color: var(--text-lighter) !important;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-neon-green-outline {
+    color: var(--neon-green) !important;
+    border-color: var(--neon-green) !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+}
+
+.btn-neon-green-outline:hover {
+    background-color: var(--neon-green) !important;
+    color: var(--bg-dark) !important; /* Text becomes dark in light mode, lighter in dark mode */
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-neon-blue-outline {
+    color: var(--neon-blue) !important;
+    border-color: var(--neon-blue) !important;
+    background-color: transparent !important;
+    transition: all 0.3s ease;
+}
+
+.btn-neon-blue-outline:hover {
+    background-color: var(--neon-blue) !important;
+    color: var(--bg-dark) !important; /* Text becomes dark in light mode, lighter in dark mode */
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+
+.logout-btn {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--text-primary) !important;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: var(--neon-pink) !important;
+    color: var(--text-lighter) !important;
+    border-color: var(--neon-pink) !important;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.4);
+    transform: translateY(-2px);
+}
+
+/* --- Utility/Animation Classes --- */
+.emoji {
+    filter: grayscale(0%); 
+}
+
+/* Footer */
+.footer {
+    background-color: var(--bg-light) !important;
+    border-top: 1px solid var(--border-dark);
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.3);
+    color: var(--text-secondary) !important; 
+    margin-top: auto;
+}
+
+.form-control-dark-minimal::placeholder { 
+    color: var(--text-secondary) !important; 
+    opacity: 0.7; 
+    transition: color 0.3s ease;
+}
+
+.form-control-dark-minimal::-webkit-input-placeholder { 
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+}
+
+.form-control-dark-minimal::-moz-placeholder { 
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+}
+
+.form-control-dark-minimal:-ms-input-placeholder { 
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+}
+
+.form-control-dark-minimal::ms-input-placeholder { 
+    color: var(--text-secondary) !important;
+    opacity: 0.7;
+}
+
+/* NEW: Placeholder styling for light mode */
+body.light-mode .form-control-dark-minimal::placeholder,
+body.light-mode .form-control-dark-minimal::-webkit-input-placeholder,
+body.light-mode .form-control-dark-minimal::-moz-placeholder,
+body.light-mode .form-control-dark-minimal:-ms-input-placeholder,
+body.light-mode .form-control-dark-minimal::ms-input-placeholder {
+    color: var(--text-secondary) !important; 
+    opacity: 0.7;
+}
+
+
+.theme-switch-link-text {
+    color: var(--text-secondary) !important; 
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.theme-switch-link {
+    color: var(--neon-blue) !important; 
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.theme-switch-link:hover {
+    color: var(--neon-purple) !important; 
+    text-shadow: 0 0 5px rgba(157, 78, 221, 0.4);
+}
+
+.btn-neon-purple {
+    background-color: var(--neon-purple) !important;
+    color: var(--text-lighter) !important; 
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem 1.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-neon-purple:hover {
+    background-color: var(--neon-purple) !important; /* Still neon on hover */
+    box-shadow: 0 0 25px rgba(157, 78, 221, 0.7), 0 0 50px rgba(157, 78, 221, 0.3);
+    transform: translateY(-3px) scale(1.02);
+}
+
+body.light-mode .btn-neon-purple {
+    background-color: var(--neon-purple) !important; 
+    color: var(--text-lighter) !important; /* Keep text color */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subdue shadow */
+}
+
+body.light-mode .btn-neon-purple {
+    background-color: #007bff !important;
+    color: white !important; /* White text on blue background */
+    border: 1px solid #007bff !important; /* Solid border */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subdue shadow */
+}
+
+body.light-mode .btn-neon-purple:hover {
+    background-color: #0056b3 !important; /* Darker blue on hover */
+    border-color: #0056b3 !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .btn-neon-purple:hover {
+    background-color: var(--neon-purple) !important;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.theme-intro-text {
+    color: var(--text-secondary); 
+}
+
+.footer .social-links a {
+    color: var(--text-secondary) !important; 
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer .social-links a.hover-neon:hover {
+    color: var(--neon-yellow) !important;
+    text-shadow: 0 0 8px rgba(254, 254, 51, 0.6);
+}
+
+
+.footer .hover-neon:hover {
+    color: var(--neon-yellow) !important;
+    text-shadow: 0 0 8px rgba(254, 254, 51, 0.6);
+}
+
+/* Flash Messages */
+.alert {
+    background-color: var(--bg-light); /* Apply theme background */
+    color: var(--text-primary); /* Apply theme text color */
+    border: 1px solid var(--border-dark);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+}
+
+.alert-success {
+    border-color: var(--neon-green);
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+}
+.alert-success .btn-close { filter: brightness(2) saturate(0.8); } /* Make close button visible on dark bg */
+
+.alert-info {
+    border-color: var(--neon-blue);
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+}
+.alert-info .btn-close { filter: brightness(2) saturate(0.8); }
+
+.alert-warning {
+    border-color: var(--neon-yellow);
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+}
+.alert-warning .btn-close { filter: brightness(2) saturate(0.8); }
+
+.alert-danger {
+    border-color: var(--neon-pink);
+    color: var(--text-primary);
+    background-color: var(--bg-light);
+}
+.alert-danger .btn-close { filter: brightness(2) saturate(0.8); }
+
+
+/* Close button for alerts */
+.btn-close {
+    background-color: transparent;
+    border: 0;
+    opacity: 0.7;
+    filter: invert(1) grayscale(100%) brightness(200%); /* Makes it visible on dark backgrounds */
+    transition: opacity 0.3s ease;
+}
+
+.btn-close:hover {
+    opacity: 1;
+    filter: invert(1) grayscale(100%) brightness(250%); /* More visible on hover */
+}
+
+
+/* Animate.css Custom Animations */
+.animate__animated.animate__fadeInDown {
+    animation-duration: 0.8s;
+}
+
+.animate__animated.animate__fadeInUp {
+    animation-duration: 0.8s;
+}
+
+.animate__animated.animate__fadeIn {
+    animation-duration: 1s;
+}
+
+.animate__animated.animate__bounceIn {
+    animation-duration: 1.2s;
+}
+
+.animate__animated.animate__pulse.animate__infinite {
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+/* Custom click pulse animation */
+@keyframes pulse_click {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+.animate__pulse_click {
+    animation-name: pulse_click;
+    animation-duration: 0.3s;
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 991.98px) { 
+    .navbar-collapse {
+        background-color: var(--bg-light); 
+        border-top: 1px solid var(--border-dark);
+        margin-top: 0.5rem;
+        padding: 1rem 0;
+        border-radius: 8px;
+    }
+    .navbar-nav .nav-item {
+        text-align: center;
+    }
+    .navbar-nav .nav-link {
+        padding: 0.75rem 0;
+    }
+    .navbar-nav .nav-item.d-none.d-lg-block {
+        display: none !important;
+    }
+    .navbar-nav .ms-lg-3 {
+        margin-left: 0 !important;
+    }
+    .navbar-nav .mt-lg-0 {
+        margin-top: 1rem !important;
+    }
+}

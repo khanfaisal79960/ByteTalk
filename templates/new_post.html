@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}VibeCheck Blog - New Post{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+        <div class="text-center mb-4">
+            <h1 class="post-detail-title animate__animated animate__fadeInDown">New Post Alert! 📢</h1>
+            <p class="lead text-center mb-4 theme-intro-text animate__animated animate__fadeIn">What's on your mind? Share your thoughts!</p>
+        </div>
+        <form method="POST" action="{{ url_for('new_post') }}" class="p-4 card-genz">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title <span class="emoji">✨</span></label>
+                <input type="text" class="form-control form-control-genz" id="title" name="title" required placeholder="A catchy title...">
+            </div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Content <span class="emoji">📝 (markdown enabled)</span></label>
+                <textarea class="form-control form-control-genz form-control-dark-minimal" id="content" name="content" rows="8" required placeholder="Spill the deets here..."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="author" class="form-label">Author (optional) <span class="emoji">👤</span></label>
+                <input type="text" class="form-control form-control-genz" id="author" name="author" placeholder="Your awesome name">
+            </div>
+            <button type="submit" class="btn btn-outline-secondary btn-neon-purple-outline" style="color: #fff;">Publish Post <span class="emoji">🚀</span></button>
+        </form>
+    </div>
+</div>
+{% endblock %}
