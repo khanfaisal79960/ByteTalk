@@ -19,13 +19,13 @@
             <a class="navbar-brand logo-animate" href="{{ url_for('index') }}">
                 <span class="logo-text">ByteTalk</span> <span class="emoji">💻</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggler">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link" href="{{ url_for('index') }}">Home <span class="emoji">🏠</span></a>
                     </li>
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
