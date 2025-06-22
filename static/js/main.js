@@ -76,4 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
             setTheme(!isLightMode); // Toggle the theme
         });
     }
+
+    // --- Manual Navbar Toggler Logic ---
+    const navbarToggler = document.getElementById('navbarToggler');
+    const navbarNav = document.getElementById('navbarNav');
+
+    if (navbarToggler && navbarNav) {
+        navbarToggler.addEventListener('click', () => {
+            const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+
+            if (isExpanded) {
+                navbarNav.classList.remove('show');
+                navbarToggler.setAttribute('aria-expanded', 'false');
+            } else {
+                navbarNav.classList.add('show');
+                navbarToggler.setAttribute('aria-expanded', 'true');
+            }
+        });
+    }
 });
